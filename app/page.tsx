@@ -83,7 +83,7 @@ export default function HomePage() {
           style={{
             fontFamily: 'var(--font-fraunces)',
             fontWeight: 400,
-            fontSize: 'clamp(2rem, 7vw, 5rem)',
+            fontSize: 'clamp(1.5rem, 5vw, 3.5rem)',
             color: 'var(--text)',
             lineHeight: 1.18,
             maxWidth: 820,
