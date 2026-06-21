@@ -129,9 +129,8 @@ export default function HomePage() {
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
             gap: 10,
-            marginTop: '3rem',
-            width: '100%',
-            maxWidth: 680,
+            margin: '3rem auto 0',
+            width: 'min(100%, 680px)',
           }}
         >
           {dirCards.map(({ icon: Icon, label, href }) => (
