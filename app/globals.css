@@ -144,6 +144,13 @@ button, a, [role="button"], [role="tab"] {
     aspect-ratio: 3/4;
     max-height: 300px;
   }
+
+  /* Grain textures use SVG filters that force compositing layers.
+     On mobile GPU budget is tight, so we remove them. */
+  body::before,
+  .grain-overlay::after {
+    display: none;
+  }
 }
 
 /* ── Reduced motion ───────────────────────────────────── */

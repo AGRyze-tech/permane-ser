@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '600'],
+  weight: ['400'],
   style: ['normal', 'italic'],
   variable: '--font-fraunces',
   display: 'swap',
