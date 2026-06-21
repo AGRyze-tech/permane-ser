@@ -181,6 +181,17 @@ button, a, [role="button"], [role="tab"] {
 .grain-overlay > * { position: relative; z-index: 1; }
 .grain-overlay-4::after { opacity: 0.038; }
 
+/* ── Direction cards grid — homepage ─────────────────────── */
+.dir-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 500px) {
+  .dir-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ── Bento grid — 4 Frentes ───────────────────────────── */
 .grid-frentes {
   display: grid;

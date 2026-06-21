@@ -125,9 +125,8 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8, delay: 1.05, ease: E }}
+          className="dir-cards-grid"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))',
             gap: 10,
             margin: '3rem auto 0',
             width: 'min(100%, 680px)',
