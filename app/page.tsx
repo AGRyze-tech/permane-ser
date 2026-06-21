@@ -127,7 +127,7 @@ export default function HomePage() {
           transition={{ duration: 0.8, delay: 1.05, ease: E }}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))',
             gap: 10,
             margin: '3rem auto 0',
             width: 'min(100%, 680px)',
