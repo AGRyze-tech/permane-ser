@@ -45,9 +45,7 @@ export default function RootLayout({
             __html: `
               try {
                 var saved = localStorage.getItem('ps-theme');
-                var sys = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                var t = saved || (sys ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', t);
+                document.documentElement.setAttribute('data-theme', saved || 'light');
               } catch(e) {}
             `,
           }}
