@@ -64,7 +64,10 @@
 
 html {
   overflow-x: hidden;
-  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 body {
@@ -124,6 +127,22 @@ button:focus-visible {
   top: 0;
   outline: 2px solid #fff;
   outline-offset: -4px;
+}
+
+/* ── Touch — eliminate 300ms tap delay ───────────────── */
+button, a, [role="button"], [role="tab"] {
+  touch-action: manipulation;
+}
+
+/* ── Hero photo — cap height on mobile ───────────────── */
+.photo-hero-inner {
+  aspect-ratio: 4/5;
+}
+@media (max-width: 767px) {
+  .photo-hero-inner {
+    aspect-ratio: 3/4;
+    max-height: 300px;
+  }
 }
 
 /* ── Reduced motion ───────────────────────────────────── */

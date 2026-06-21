@@ -22,7 +22,7 @@ const eyebrow: React.CSSProperties = {
 }
 
 const sectionPad: React.CSSProperties = {
-  padding: 'clamp(5rem,12vw,9rem) clamp(1.5rem,5vw,4rem)',
+  padding: 'clamp(3rem,10vw,9rem) clamp(1.5rem,5vw,4rem)',
 }
 
 /* ── Blur-fade entry, heavy spring ──────────────────────── */
@@ -41,7 +41,7 @@ function FadeIn({
   return (
     <motion.div
       className={className}
-      initial={reduced ? {} : { opacity: 0, y: 28, filter: 'blur(6px)' }}
+      initial={reduced ? {} : { opacity: 0, y: 28, filter: 'blur(4px)' }}
       whileInView={reduced ? {} : { opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '-8%' }}
       transition={{ duration: 0.85, delay, ease: E }}
@@ -112,7 +112,7 @@ export default function HomePage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '7rem clamp(1.5rem,5vw,4rem) 5rem',
+          padding: '7rem clamp(1.5rem,5vw,4rem) clamp(2.5rem,6vw,5rem)',
           textAlign: 'center',
         }}
       >
@@ -142,7 +142,7 @@ export default function HomePage() {
           {heroLines.map((line, i) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0, y: 28, filter: 'blur(10px)' }}
+              initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.9, delay: 0.12 + i * 0.16, ease: E }}
               style={{ display: 'block' }}
@@ -154,7 +154,7 @@ export default function HomePage() {
 
         {/* Sub */}
         <motion.p
-          initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
+          initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8, delay: 0.85, ease: E }}
           style={{
@@ -171,7 +171,7 @@ export default function HomePage() {
 
         {/* Direction cards — 2×2 double-bezel grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.8, delay: 1.05, ease: E }}
           style={{
@@ -289,14 +289,13 @@ export default function HomePage() {
                   zIndex: 1,
                   borderRadius: 'calc(2rem - 8px)',
                   overflow: 'hidden',
-                  aspectRatio: '4/5',
                   background: 'var(--bg-alt)',
                   boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.6)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  minHeight: 360,
                 }}
+                className="photo-hero-inner"
               >
                 {/* TODO: foto profissional da Arlete */}
                 <span style={{ fontFamily: 'var(--font-work-sans)', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
@@ -433,7 +432,7 @@ export default function HomePage() {
         className="grain-overlay grain-overlay-4"
         style={{
           background: 'var(--green)',
-          padding: 'clamp(5.5rem,14vw,9rem) clamp(1.5rem,5vw,4rem)',
+          padding: 'clamp(3.5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)',
           textAlign: 'center',
         }}
       >

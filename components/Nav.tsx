@@ -76,6 +76,7 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
+              aria-current={pathname === l.href ? 'page' : undefined}
               style={{
                 fontFamily: 'var(--font-work-sans)',
                 fontSize: '0.8125rem',

@@ -3,32 +3,45 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 const WA_BASE = 'https://wa.me/55' // TODO: número de WhatsApp da Arlete
-
 function waLink(msg: string) {
   return `${WA_BASE}?text=${encodeURIComponent(msg)}`
 }
 
-const eyebrowStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-fraunces)',
-  fontStyle: 'italic',
-  fontSize: '0.875rem',
+const E: [number, number, number, number] = [0.32, 0.72, 0, 1]
+
+const eyebrow: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+  background: 'var(--terracotta-soft)',
+  border: '1px solid rgba(192,133,82,0.28)',
+  borderRadius: 9999,
+  padding: '0.325rem 1rem',
+  fontFamily: 'var(--font-work-sans)',
+  fontSize: '0.6875rem',
+  fontWeight: 500,
+  letterSpacing: '0.16em',
+  textTransform: 'uppercase' as const,
   color: 'var(--terracotta)',
-  letterSpacing: '0.08em',
-  marginBottom: '1rem',
+  marginBottom: '1.75rem',
 }
 
+const Dot = () => (
+  <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--terracotta)', flexShrink: 0 }} />
+)
+
 const sectionPad: React.CSSProperties = {
-  padding: 'clamp(4rem,10vw,7rem) clamp(1.5rem,5vw,4rem)',
+  padding: 'clamp(3rem,10vw,9rem) clamp(1.5rem,5vw,4rem)',
 }
 
 function FadeIn({ children, delay = 0, style }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
   const reduced = useReducedMotion()
   return (
     <motion.div
-      initial={reduced ? {} : { opacity: 0, y: 20 }}
-      whileInView={reduced ? {} : { opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
+      initial={reduced ? {} : { opacity: 0, y: 28, filter: 'blur(4px)' }}
+      whileInView={reduced ? {} : { opacity: 1, y: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-8%' }}
+      transition={{ duration: 0.85, delay, ease: E }}
       style={style}
     >
       {children}
@@ -107,7 +120,7 @@ export default function FormacoesPage() {
 
   return (
     <>
-      {/* ===== HERO ===== */}
+      {/* ═══ HERO ═══════════════════════════════════════ */}
       <section
         className="grain-overlay"
         style={{
@@ -117,29 +130,30 @@ export default function FormacoesPage() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '7rem clamp(1.5rem,5vw,4rem) 5rem',
+          padding: '7rem clamp(1.5rem,5vw,4rem) clamp(2.5rem,6vw,5rem)',
           textAlign: 'center',
         }}
       >
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          style={eyebrowStyle}
+        <motion.span
+          initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.7, ease: E }}
+          style={{ display: 'inline-flex' }}
         >
-          FORMAÇÕES E PALESTRAS
-        </motion.p>
+          <span style={eyebrow}><Dot /> Formações e Palestras</span>
+        </motion.span>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.85, delay: 0.12, ease: E }}
           style={{
             fontFamily: 'var(--font-fraunces)',
             fontWeight: 400,
-            fontSize: 'clamp(2rem, 5.5vw, 3.2rem)',
+            fontStyle: 'italic',
+            fontSize: 'clamp(2rem, 5.5vw, 3.4rem)',
             color: 'var(--text)',
-            lineHeight: 1.25,
+            lineHeight: 1.2,
             maxWidth: 760,
           }}
         >
@@ -147,14 +161,14 @@ export default function FormacoesPage() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
+          initial={{ opacity: 0, y: 18, filter: 'blur(4px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.75, delay: 0.28, ease: E }}
           style={{
             fontFamily: 'var(--font-work-sans)',
             fontSize: '1rem',
             color: 'var(--text-muted)',
-            lineHeight: 1.8,
+            lineHeight: 1.85,
             marginTop: '1.5rem',
             maxWidth: 520,
           }}
@@ -164,137 +178,165 @@ export default function FormacoesPage() {
 
         {/* Tab filters */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          style={{ display: 'flex', gap: '0.5rem', marginTop: '2.5rem', flexWrap: 'wrap', justifyContent: 'center' }}
+          initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.7, delay: 0.44, ease: E }}
+          style={{ display: 'flex', gap: '0.5rem', marginTop: '3rem', flexWrap: 'wrap', justifyContent: 'center' }}
         >
-          {tabs.map(t => (
-            <button
-              key={t.key}
-              type="button"
-              onClick={() => setActiveTab(t.key)}
-              style={{
-                fontFamily: 'var(--font-work-sans)',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                padding: '0.55rem 1.4rem',
-                borderRadius: 100,
-                border: '1.5px solid',
-                borderColor: activeTab === t.key ? 'var(--green)' : 'var(--border)',
-                background: activeTab === t.key ? 'var(--green)' : 'transparent',
-                color: activeTab === t.key ? '#fff' : 'var(--text-muted)',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-            >
-              {t.label}
-            </button>
-          ))}
+          {/* Tab filter pill wrapper — double-bezel container */}
+          <div
+            role="tablist"
+            aria-label="Público-alvo"
+            style={{
+              display: 'flex',
+              gap: '0.375rem',
+              background: 'var(--bg-alt)',
+              border: '1px solid var(--border)',
+              borderRadius: 9999,
+              padding: '0.3rem',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.7)',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}>
+            {tabs.map(t => (
+              <button
+                key={t.key}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === t.key ? 'true' : 'false'}
+                aria-controls={`tabpanel-${t.key}`}
+                id={`tab-${t.key}`}
+                onClick={() => setActiveTab(t.key)}
+                style={{
+                  fontFamily: 'var(--font-work-sans)',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  padding: '0.475rem 1.25rem',
+                  borderRadius: 9999,
+                  border: 'none',
+                  background: activeTab === t.key ? 'var(--green)' : 'transparent',
+                  color: activeTab === t.key ? '#fff' : 'var(--text-muted)',
+                  cursor: 'pointer',
+                  transition: `background 0.35s cubic-bezier(0.32,0.72,0,1), color 0.35s cubic-bezier(0.32,0.72,0,1)`,
+                }}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
         </motion.div>
       </section>
 
-      {/* ===== TAB CONTENT ===== */}
+      {/* ═══ TAB CONTENT ════════════════════════════════ */}
       <section style={{ background: 'var(--bg-alt)', ...sectionPad }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={reduced ? {} : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              role="tabpanel"
+              id={`tabpanel-${activeTab}`}
+              aria-labelledby={`tab-${activeTab}`}
+              initial={reduced ? {} : { opacity: 0, y: 12, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               exit={reduced ? {} : { opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.28, ease: E }}
             >
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                  gap: 16,
-                }}
-              >
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: 16,
+              }}>
                 {tabContent[activeTab].map((item) => (
+                  /* Double-bezel card */
                   <div
                     key={item.title}
                     style={{
-                      background: 'var(--bg-card)',
+                      background: 'rgba(192,133,82,0.05)',
                       border: '1px solid var(--border)',
-                      borderRadius: 12,
-                      padding: '2rem',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.875rem',
+                      borderRadius: '2rem',
+                      padding: 6,
                     }}
                   >
-                    <h3
-                      style={{
+                    <div style={{
+                      background: 'var(--bg-card)',
+                      borderRadius: 'calc(2rem - 6px)',
+                      boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.85)',
+                      padding: '2.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1rem',
+                      height: '100%',
+                    }}>
+                      <h3 style={{
                         fontFamily: 'var(--font-fraunces)',
                         fontWeight: 400,
-                        fontSize: '1.15rem',
+                        fontStyle: 'italic',
+                        fontSize: '1.2rem',
                         color: 'var(--text)',
                         lineHeight: 1.35,
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-                    <p
-                      style={{
+                      }}>{item.title}</h3>
+                      <p style={{
                         fontFamily: 'var(--font-work-sans)',
                         fontSize: '0.9375rem',
                         color: 'var(--text-muted)',
-                        lineHeight: 1.75,
+                        lineHeight: 1.8,
                         flex: 1,
-                      }}
-                    >
-                      {item.desc}
-                    </p>
-                    {item.details && (
-                      <p
-                        style={{
+                      }}>{item.desc}</p>
+                      {item.details && (
+                        <p style={{
                           fontFamily: 'var(--font-work-sans)',
                           fontSize: '0.875rem',
                           color: 'var(--text-muted)',
                           lineHeight: 1.7,
                           fontStyle: 'italic',
-                        }}
-                      >
-                        {item.details}
-                      </p>
-                    )}
-                    {item.duration && (
-                      <span
-                        style={{
+                        }}>{item.details}</p>
+                      )}
+                      {item.duration && (
+                        <span style={{
                           fontFamily: 'var(--font-work-sans)',
                           fontSize: '0.8125rem',
                           color: 'var(--terracotta)',
                           background: 'var(--terracotta-soft)',
-                          border: '1px solid var(--terracotta)',
-                          borderRadius: 100,
+                          border: '1px solid rgba(192,133,82,0.3)',
+                          borderRadius: 9999,
                           padding: '0.3rem 0.9rem',
                           alignSelf: 'flex-start',
+                        }}>{item.duration}</span>
+                      )}
+                      {/* Button-in-button CTA */}
+                      <a
+                        href={waLink(item.msg)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.375rem',
+                          fontFamily: 'var(--font-work-sans)',
+                          fontSize: '0.875rem',
+                          fontWeight: 500,
+                          color: '#fff',
+                          background: 'var(--green)',
+                          borderRadius: 9999,
+                          padding: '0.4rem 0.4rem 0.4rem 1.25rem',
+                          textDecoration: 'none',
+                          alignSelf: 'flex-start',
+                          transition: `background 0.35s cubic-bezier(0.32,0.72,0,1)`,
                         }}
                       >
-                        {item.duration}
-                      </span>
-                    )}
-                    <a
-                      href={waLink(item.msg)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        fontFamily: 'var(--font-work-sans)',
-                        fontSize: '0.875rem',
-                        fontWeight: 500,
-                        color: '#fff',
-                        background: 'var(--green)',
-                        borderRadius: 6,
-                        padding: '0.6rem 1.25rem',
-                        textDecoration: 'none',
-                        alignSelf: 'flex-start',
-                        transition: 'background 0.2s',
-                      }}
-                    >
-                      Solicitar proposta →
-                    </a>
+                        Solicitar proposta
+                        <span style={{
+                          width: 28, height: 28,
+                          borderRadius: '50%',
+                          background: 'rgba(255,255,255,0.18)',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          fontSize: '0.85rem',
+                        }}>→</span>
+                      </a>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -303,69 +345,77 @@ export default function FormacoesPage() {
         </div>
       </section>
 
-      {/* ===== POR QUE CONTRATAR A ARLETE ===== */}
+      {/* ═══ POR QUE ARLETE KLAUCK ══════════════════════ */}
       <section style={{ background: 'var(--bg)', ...sectionPad }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <FadeIn style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <p style={eyebrowStyle}>POR QUE ARLETE KLAUCK</p>
-            <h2
-              style={{
-                fontFamily: 'var(--font-fraunces)',
-                fontWeight: 400,
-                fontSize: 'clamp(1.6rem, 4vw, 2.2rem)',
-                color: 'var(--text)',
-                maxWidth: 600,
-                margin: '0 auto',
-                lineHeight: 1.3,
-              }}
-            >
+          <FadeIn style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <span style={eyebrow}><Dot /> Por que Arlete Klauck</span>
+            <h2 style={{
+              fontFamily: 'var(--font-fraunces)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
+              color: 'var(--text)',
+              maxWidth: 580,
+              margin: '0 auto',
+              lineHeight: 1.25,
+            }}>
               O que diferencia este trabalho.
             </h2>
           </FadeIn>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: 16,
-            }}
-          >
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: 16,
+          }}>
             {diferenciais.map((d, i) => (
               <FadeIn key={d.title} delay={i * 0.1}>
-                <div
-                  style={{
+                {/* Double-bezel card */}
+                <div style={{
+                  background: 'rgba(31,59,44,0.05)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '2rem',
+                  padding: 6,
+                  height: '100%',
+                }}>
+                  <div style={{
                     background: 'var(--bg-alt)',
-                    border: '1px solid var(--border)',
-                    borderRadius: 12,
-                    padding: '2rem',
+                    borderRadius: 'calc(2rem - 6px)',
+                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.75)',
+                    padding: '2.25rem',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '1rem',
-                  }}
-                >
-                  <span style={{ color: 'var(--terracotta)' }}>
-                    <d.icon />
-                  </span>
-                  <h3
-                    style={{
+                    gap: '1.25rem',
+                    height: '100%',
+                  }}>
+                    {/* Icon in premium circle */}
+                    <div style={{
+                      width: 52, height: 52,
+                      borderRadius: '50%',
+                      background: 'var(--terracotta-soft)',
+                      border: '1px solid rgba(192,133,82,0.3)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'var(--terracotta)',
+                      flexShrink: 0,
+                    }}>
+                      <d.icon />
+                    </div>
+                    <h3 style={{
                       fontFamily: 'var(--font-fraunces)',
                       fontWeight: 400,
-                      fontSize: '1.1rem',
+                      fontSize: '1.15rem',
                       color: 'var(--text)',
-                    }}
-                  >
-                    {d.title}
-                  </h3>
-                  <p
-                    style={{
+                    }}>{d.title}</h3>
+                    <p style={{
                       fontFamily: 'var(--font-work-sans)',
                       fontSize: '0.9rem',
                       color: 'var(--text-muted)',
-                      lineHeight: 1.75,
-                    }}
-                  >
-                    {d.desc}
-                  </p>
+                      lineHeight: 1.8,
+                    }}>{d.desc}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -373,40 +423,36 @@ export default function FormacoesPage() {
         </div>
       </section>
 
-      {/* ===== CTA FINAL ===== */}
+      {/* ═══ CTA FINAL ═══════════════════════════════════ */}
       <section
         className="grain-overlay grain-overlay-4"
         style={{
           background: 'var(--green)',
-          padding: 'clamp(5rem,12vw,8rem) clamp(1.5rem,5vw,4rem)',
+          padding: 'clamp(3rem,10vw,9rem) clamp(1.5rem,5vw,4rem)',
           textAlign: 'center',
         }}
       >
         <FadeIn>
-          <h2
-            style={{
-              fontFamily: 'var(--font-fraunces)',
-              fontStyle: 'italic',
-              fontWeight: 400,
-              fontSize: 'clamp(1.8rem, 5vw, 2.8rem)',
-              color: '#fff',
-              lineHeight: 1.25,
-              maxWidth: 640,
-              margin: '0 auto',
-            }}
-          >
+          <h2 style={{
+            fontFamily: 'var(--font-fraunces)',
+            fontStyle: 'italic',
+            fontWeight: 400,
+            fontSize: 'clamp(1.8rem, 5vw, 3rem)',
+            color: '#fff',
+            lineHeight: 1.2,
+            maxWidth: 620,
+            margin: '0 auto',
+          }}>
             Leve essa reflexão para sua instituição.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p
-            style={{
-              fontFamily: 'var(--font-work-sans)',
-              fontSize: '1rem',
-              color: 'rgba(255,255,255,0.65)',
-              marginTop: '1.25rem',
-            }}
-          >
+          <p style={{
+            fontFamily: 'var(--font-work-sans)',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.6)',
+            marginTop: '1.25rem',
+          }}>
             Entre em contato e receba uma proposta personalizada.
           </p>
         </FadeIn>
@@ -416,19 +462,32 @@ export default function FormacoesPage() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              display: 'inline-block',
-              marginTop: '2.5rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.375rem',
+              marginTop: '3rem',
               fontFamily: 'var(--font-work-sans)',
               fontWeight: 500,
               fontSize: '0.9375rem',
               color: 'var(--green)',
               background: '#fff',
-              borderRadius: 6,
-              padding: '0.8rem 2rem',
+              borderRadius: 9999,
+              padding: '0.5rem 0.5rem 0.5rem 1.75rem',
               textDecoration: 'none',
+              transition: `opacity 0.3s cubic-bezier(0.32,0.72,0,1)`,
             }}
           >
-            Solicitar proposta pelo WhatsApp
+            Solicitar proposta
+            <span style={{
+              width: 38, height: 38,
+              borderRadius: '50%',
+              background: 'rgba(31,59,44,0.12)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+              fontSize: '1rem',
+            }}>→</span>
           </a>
         </FadeIn>
       </section>
@@ -436,10 +495,10 @@ export default function FormacoesPage() {
   )
 }
 
-/* ---- Icons ---- */
+/* ── Icons ────────────────────────────────────────────── */
 function ScienceIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18" />
     </svg>
   )
@@ -447,7 +506,7 @@ function ScienceIcon() {
 
 function ExperienceIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
@@ -456,7 +515,7 @@ function ExperienceIcon() {
 
 function IntegrativeIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     </svg>
   )
