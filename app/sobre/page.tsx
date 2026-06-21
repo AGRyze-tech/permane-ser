@@ -1,52 +1,6 @@
 'use client'
-import { motion, useReducedMotion } from 'framer-motion'
-
-const WA_BASE = 'https://wa.me/55' // TODO: número de WhatsApp da Arlete
-function waLink(msg: string) {
-  return `${WA_BASE}?text=${encodeURIComponent(msg)}`
-}
-
-const E: [number, number, number, number] = [0.32, 0.72, 0, 1]
-
-const eyebrow: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '0.5rem',
-  background: 'var(--terracotta-soft)',
-  border: '1px solid rgba(192,133,82,0.28)',
-  borderRadius: 9999,
-  padding: '0.325rem 1rem',
-  fontFamily: 'var(--font-work-sans)',
-  fontSize: '0.6875rem',
-  fontWeight: 500,
-  letterSpacing: '0.16em',
-  textTransform: 'uppercase' as const,
-  color: 'var(--terracotta)',
-  marginBottom: '1.75rem',
-}
-
-const Dot = () => (
-  <span style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--terracotta)', flexShrink: 0 }} />
-)
-
-const sectionPad: React.CSSProperties = {
-  padding: 'clamp(3rem,10vw,9rem) clamp(1.5rem,5vw,4rem)',
-}
-
-function FadeIn({ children, delay = 0, style }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
-  const reduced = useReducedMotion()
-  return (
-    <motion.div
-      initial={reduced ? {} : { opacity: 0, y: 28, filter: 'blur(4px)' }}
-      whileInView={reduced ? {} : { opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '-8%' }}
-      transition={{ duration: 0.85, delay, ease: E }}
-      style={style}
-    >
-      {children}
-    </motion.div>
-  )
-}
+import { motion } from 'framer-motion'
+import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
 const formacoes = [
   { year: '2012', label: 'Graduação em Psicologia' },
@@ -54,6 +8,13 @@ const formacoes = [
   { year: '2015', label: 'Especialização em Avaliação Psicológica' },
   { year: '2019', label: 'Especialização em Terapia do Esquema' },
   { year: '2024', label: 'Especialização em Diagnóstico e Intervenção em TDAH' },
+]
+
+const frentes = [
+  { label: 'Clínica Particular', desc: 'Atendimento individual online e presencial' },
+  { label: 'Publicações', desc: 'Livros e ferramentas clínicas para profissionais e pacientes' },
+  { label: 'Formações', desc: 'Palestras e workshops para universidades e empresas' },
+  { label: 'Conteúdo Digital', desc: 'Psicoeducação com profundidade e acessibilidade' },
 ]
 
 export default function SobrePage() {
@@ -425,12 +386,7 @@ export default function SobrePage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
             gap: 12,
           }}>
-            {[
-              { label: 'Clínica Particular', desc: 'Atendimento individual online e presencial' },
-              { label: 'Publicações', desc: 'Livros e ferramentas clínicas para profissionais e pacientes' },
-              { label: 'Formações', desc: 'Palestras e workshops para universidades e empresas' },
-              { label: 'Conteúdo Digital', desc: 'Psicoeducação com profundidade e acessibilidade' },
-            ].map((f, i) => (
+            {frentes.map((f, i) => (
               <FadeIn key={f.label} delay={i * 0.07}>
                 <div style={{
                   background: 'rgba(31,59,44,0.04)',

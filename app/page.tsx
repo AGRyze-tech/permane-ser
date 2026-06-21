@@ -1,56 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { motion, useReducedMotion } from 'framer-motion'
-
-const E: [number, number, number, number] = [0.32, 0.72, 0, 1]
-
-const eyebrow: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '0.5rem',
-  background: 'var(--terracotta-soft)',
-  border: '1px solid rgba(192,133,82,0.28)',
-  borderRadius: 9999,
-  padding: '0.325rem 1rem',
-  fontFamily: 'var(--font-work-sans)',
-  fontSize: '0.6875rem',
-  fontWeight: 500,
-  letterSpacing: '0.16em',
-  textTransform: 'uppercase' as const,
-  color: 'var(--terracotta)',
-  marginBottom: '1.75rem',
-}
-
-const sectionPad: React.CSSProperties = {
-  padding: 'clamp(3rem,10vw,9rem) clamp(1.5rem,5vw,4rem)',
-}
-
-/* ── Blur-fade entry, heavy spring ──────────────────────── */
-function FadeIn({
-  children,
-  delay = 0,
-  style,
-  className,
-}: {
-  children: React.ReactNode
-  delay?: number
-  style?: React.CSSProperties
-  className?: string
-}) {
-  const reduced = useReducedMotion()
-  return (
-    <motion.div
-      className={className}
-      initial={reduced ? {} : { opacity: 0, y: 28, filter: 'blur(4px)' }}
-      whileInView={reduced ? {} : { opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '-8%' }}
-      transition={{ duration: 0.85, delay, ease: E }}
-      style={style}
-    >
-      {children}
-    </motion.div>
-  )
-}
+import { motion } from 'framer-motion'
+import { E, eyebrow, sectionPad, FadeIn } from '../lib/motion'
 
 /* ── Data ─────────────────────────────────────────────── */
 const heroLines = [
