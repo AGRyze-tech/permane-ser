@@ -4,17 +4,17 @@ import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
 const formacoes = [
   { year: '2012', label: 'Graduação em Psicologia' },
-  { year: '2013', label: 'Especialização em Terapia Cognitivo-Comportamental' },
-  { year: '2015', label: 'Especialização em Avaliação Psicológica' },
-  { year: '2019', label: 'Especialização em Terapia do Esquema' },
-  { year: '2024', label: 'Especialização em Diagnóstico e Intervenção em TDAH' },
+  { year: '—', label: 'Graduação em Administração de Empresas' },
+  { year: '—', label: 'Pós-graduação em Terapia Cognitivo-Comportamental (PUC-RS)' },
+  { year: '—', label: 'Formação em Psicoterapia Cognitivo-Comportamental da Infância e Adolescência' },
+  { year: '—', label: 'Formação em Psicoterapia Sexual' },
 ]
 
 const frentes = [
-  { label: 'Clínica Particular', desc: 'Atendimento individual online e presencial' },
-  { label: 'Publicações', desc: 'Livros e ferramentas clínicas para profissionais e pacientes' },
-  { label: 'Formações', desc: 'Palestras e workshops para universidades e empresas' },
-  { label: 'Conteúdo Digital', desc: 'Psicoeducação com profundidade e acessibilidade' },
+  { label: 'Clínica Particular', desc: 'Atendimento individual online e presencial (CRP 03/12541)' },
+  { label: 'Publicações', desc: 'Livros, baralhos terapêuticos e recursos clínicos para profissionais e pacientes' },
+  { label: 'Formações e Programas', desc: 'Palestras, workshops e programas em grupo para universidades e empresas' },
+  { label: 'Gestão e Desenvolvimento', desc: 'Consultoria e formações com visão integrada de Psicologia e Administração de Empresas' },
 ]
 
 export default function SobrePage() {
@@ -59,7 +59,7 @@ export default function SobrePage() {
               lineHeight: 1.2,
             }}
           >
-            Psicóloga — CRP 07/19888
+            Psicóloga Clínica | Administradora | CRP 03/12541
           </motion.h1>
 
           <motion.p
@@ -75,7 +75,7 @@ export default function SobrePage() {
               maxWidth: 480,
             }}
           >
-            Mais de 11 anos dedicados à saúde emocional, ao autoconhecimento e ao desenvolvimento humano. Meu trabalho nasce da convicção de que existir com autenticidade é possível — e que às vezes precisamos de suporte para isso.
+            Psicóloga clínica com mais de 11 anos de experiência e formação em Administração de Empresas. Autora de livros e recursos terapêuticos, idealizadora do conceito Permane&apos;Ser — Reflexões sobre Existência, Vínculos e Pertencimento.
           </motion.p>
 
           <motion.div

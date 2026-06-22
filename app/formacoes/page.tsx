@@ -43,9 +43,15 @@ const tabContent: Record<TabKey, { title: string; desc: string; details?: string
   empresas: [
     {
       title: 'Formação em Saúde Emocional e Desenvolvimento Humano',
-      desc: 'Programas corporativos voltados para saúde mental, inteligência emocional e fortalecimento de equipes — adaptados à realidade e aos desafios de cada organização.',
-      details: 'Conteúdo desenhado em parceria com a equipe de RH ou liderança. Formato workshop, treinamento ou palestra.',
+      desc: 'Programas corporativos voltados para saúde mental, inteligência emocional e fortalecimento de equipes — desenvolvidos por quem une formação em Psicologia Clínica e Administração de Empresas.',
+      details: 'Conteúdo desenhado em parceria com o RH ou liderança. Mais de 11 anos de clínica aliados à experiência em gestão, coordenação de cursos e desenvolvimento de pessoas. Formatos: workshop, treinamento ou palestra.',
       msg: 'Olá Arlete, gostaria de solicitar proposta de formação corporativa.',
+    },
+    {
+      title: 'Consultoria em Desenvolvimento de Pessoas',
+      desc: 'Visão integrada de Psicologia e Administração de Empresas aplicada a processos de RH, liderança, cultura organizacional e bem-estar das equipes.',
+      details: 'Diagnóstico, planejamento e implementação sob medida. Presencial ou online.',
+      msg: 'Olá Arlete, gostaria de solicitar proposta de consultoria em desenvolvimento de pessoas.',
     },
   ],
 }
@@ -58,7 +64,7 @@ const diferenciais = [
   },
   {
     title: 'Experiência real',
-    desc: '11+ anos de atuação clínica que se traduzem em exemplos, linguagem e profundidade genuína.',
+    desc: '11+ anos de atuação clínica aliados à formação em Administração de Empresas — conteúdo que faz ponte entre saúde emocional e desafios organizacionais concretos.',
     icon: ExperienceIcon,
   },
   {
@@ -157,7 +163,7 @@ export default function FormacoesPage() {
                 key={t.key}
                 type="button"
                 role="tab"
-                aria-selected={activeTab === t.key ? 'true' : 'false'}
+                aria-selected={activeTab === t.key}
                 aria-controls={`tabpanel-${t.key}`}
                 id={`tab-${t.key}`}
                 onClick={() => setActiveTab(t.key)}

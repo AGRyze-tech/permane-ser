@@ -54,15 +54,15 @@ export function Nav() {
           href="/"
           style={{
             fontFamily: 'var(--font-fraunces)',
-            fontWeight: 600,
+            fontWeight: 400,
             fontStyle: 'italic',
-            fontSize: '1.0625rem',
+            fontSize: '1.35rem',
             color: 'var(--green)',
             textDecoration: 'none',
             padding: '0.3rem 0.875rem',
             borderRadius: 9999,
             flexShrink: 0,
-            letterSpacing: '-0.01em',
+            letterSpacing: '-0.02em',
           }}
         >
           {/* TODO: inserir logo oficial */}

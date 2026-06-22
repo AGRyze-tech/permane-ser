@@ -8,19 +8,22 @@ const programas = [
     num: '01',
     title: 'Um Encontro Consigo',
     desc: 'Para quem busca reconectar-se com sua própria identidade e necessidades, num espaço de escuta e autoconhecimento.',
-    msg: 'Olá Arlete, gostaria de saber mais sobre o programa "Um Encontro Consigo".',
+    free: true,
+    msg: 'Olá Arlete, gostaria de saber mais sobre o programa em grupo "Um Encontro Consigo".',
   },
   {
     num: '02',
     title: 'Sua Vida com Mais Propósito',
     desc: 'Para quem sente que o cotidiano perdeu sentido e busca reconstruir direção e motivação para viver.',
-    msg: 'Olá Arlete, gostaria de saber mais sobre o programa "Sua Vida com Mais Propósito".',
+    free: false,
+    msg: 'Olá Arlete, gostaria de saber mais sobre o programa em grupo "Sua Vida com Mais Propósito".',
   },
   {
     num: '03',
     title: 'Sendo Mulher e Mãe',
     desc: 'Para mulheres que vivem a maternidade buscando não se perder de si mesmas no processo.',
-    msg: 'Olá Arlete, gostaria de saber mais sobre o programa "Sendo Mulher e Mãe".',
+    free: false,
+    msg: 'Olá Arlete, gostaria de saber mais sobre o programa em grupo "Sendo Mulher e Mãe".',
   },
 ]
 
@@ -40,8 +43,8 @@ const faqs = [
     a: 'Ambos — você escolhe o formato mais confortável para você. Os atendimentos online acontecem por videochamada, com a mesma qualidade e acolhimento do presencial.',
   },
   {
-    q: 'Qual a diferença entre os programas?',
-    a: 'Cada programa tem um foco diferente, pensado para momentos específicos da vida. Na primeira conversa, identificamos juntos qual se encaixa melhor na sua realidade atual.',
+    q: 'O que são os Programas em Grupo?',
+    a: 'São programas com início e fim determinados, inspirados no livro Sobre Existir. Diferente da terapia de grupo, eles funcionam como uma imersão coletiva — com foco em autoconhecimento, pertencimento e vínculos. Cada programa tem um tema diferente. Um deles é gratuito.',
   },
   {
     q: 'Quanto tempo dura o processo terapêutico?',
@@ -216,7 +219,7 @@ export default function AtendimentoPage() {
       <section style={{ background: 'var(--bg-alt)', ...sectionPad }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <FadeIn style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span style={eyebrow}><Dot /> Programas</span>
+            <span style={eyebrow}><Dot /> Programas em Grupo</span>
             <h2 style={{
               fontFamily: 'var(--font-fraunces)',
               fontWeight: 400,
@@ -229,6 +232,16 @@ export default function AtendimentoPage() {
             }}>
               Cada jornada tem um ponto de partida diferente.
             </h2>
+            <p style={{
+              fontFamily: 'var(--font-work-sans)',
+              fontSize: '0.9375rem',
+              color: 'var(--text-muted)',
+              lineHeight: 1.8,
+              maxWidth: 520,
+              margin: '1.25rem auto 0',
+            }}>
+              Programas com início e fim determinados, inspirados no livro <em>Sobre Existir</em>. São encontros em grupo — não são terapia de grupo — com foco em autoconhecimento, vínculos e pertencimento.
+            </p>
           </FadeIn>
 
           <div style={{
@@ -271,6 +284,22 @@ export default function AtendimentoPage() {
                       pointerEvents: 'none',
                       userSelect: 'none' as const,
                     }}>{p.num}</span>
+                    {p.free && (
+                      <span style={{
+                        alignSelf: 'flex-start',
+                        fontFamily: 'var(--font-work-sans)',
+                        fontSize: '0.7rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase' as const,
+                        color: 'var(--green)',
+                        background: 'rgba(31,59,44,0.1)',
+                        border: '1px solid rgba(31,59,44,0.2)',
+                        borderRadius: 9999,
+                        padding: '0.2rem 0.75rem',
+                        position: 'relative',
+                      }}>Gratuito</span>
+                    )}
                     <h3 style={{
                       fontFamily: 'var(--font-fraunces)',
                       fontWeight: 400,

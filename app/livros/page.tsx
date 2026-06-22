@@ -1,36 +1,40 @@
 'use client'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
+import { E, eyebrow, Dot, sectionPad, FadeIn } from '../../lib/motion'
 
 const livros = [
   {
-    title: 'Imagem Corporal',
-    subtitle: 'Identificando e reestruturando distorções',
-    price: 'R$ 89,00',
-    available: true,
-    msg: 'Olá Arlete, gostaria de comprar o livro "Imagem Corporal: Identificando e reestruturando distorções".',
+    title: 'Baralho dos Esquemas Emocionais',
+    subtitle: 'Regulação Emocional na Prática Clínica — Editora Artesã',
+    available: false,
+    comingSoon: true,
+    amazonLink: '',
+    uiclapLink: '',
   },
   {
     title: 'Baralho dos Pensamentos Automáticos Negativos',
-    subtitle: 'Promovendo a reestruturação cognitiva',
-    price: 'R$ 213,00',
+    subtitle: 'Promovendo a reestruturação cognitiva — Editora Sinopsys',
     available: true,
-    msg: 'Olá Arlete, gostaria de comprar o "Baralho dos Pensamentos Automáticos Negativos".',
+    comingSoon: false,
+    amazonLink: 'https://www.amazon.com.br/s?k=Baralho+Pensamentos+Autom%C3%A1ticos+Arlete+Klauck', // TODO: link direto do produto
+    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
   },
   {
     title: 'Sobre Existir',
     subtitle: 'Para se acolher, se cuidar e seguir',
-    price: 'R$ 68,00',
     available: true,
-    msg: 'Olá Arlete, gostaria de comprar o livro "Sobre Existir".',
+    comingSoon: false,
+    amazonLink: 'https://www.amazon.com.br/s?k=Sobre+Existir+Arlete+Klauck', // TODO: link direto do produto
+    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
   },
   {
     title: 'Ser & Amar',
     subtitle: 'O desafio de permanecer fiel a si mesmo sem abrir mão dos vínculos',
-    price: 'Em desenvolvimento',
     available: false,
-    msg: '',
+    comingSoon: false,
+    amazonLink: '',
+    uiclapLink: '',
   },
 ]
 
@@ -237,56 +241,89 @@ export default function LivrosPage() {
                           lineHeight: 1.6,
                         }}>{livro.subtitle}</p>
                       )}
-                      <span style={{
-                        fontFamily: 'var(--font-fraunces)',
-                        fontWeight: 400,
-                        fontSize: '1.05rem',
-                        color: livro.available ? 'var(--terracotta)' : 'var(--text-muted)',
-                        marginTop: 'auto',
-                        paddingTop: '0.5rem',
-                      }}>{livro.price}</span>
 
                       {livro.available ? (
-                        /* Button-in-button buy CTA */
-                        <a
-                          href={waLink(livro.msg)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '0.375rem',
-                            marginTop: '0.75rem',
-                            fontFamily: 'var(--font-work-sans)',
-                            fontSize: '0.875rem',
-                            fontWeight: 500,
-                            color: '#fff',
-                            background: 'var(--green)',
-                            borderRadius: 9999,
-                            padding: '0.35rem 0.35rem 0.35rem 1rem',
-                            textDecoration: 'none',
-                            justifyContent: 'center',
-                            transition: `background 0.3s cubic-bezier(0.32,0.72,0,1)`,
-                          }}
-                        >
-                          {/* TODO: confirmar fluxo de venda */}
-                          Comprar
-                          <span style={{
-                            width: 26, height: 26,
-                            borderRadius: '50%',
-                            background: 'rgba(255,255,255,0.18)',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexShrink: 0,
-                            fontSize: '0.8rem',
-                          }}>→</span>
-                        </a>
+                        /* Dois botões externos: Amazon e Uiclap */
+                        <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', paddingTop: '0.75rem', flexWrap: 'wrap' }}>
+                          <a
+                            href={livro.amazonLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.3rem',
+                              fontFamily: 'var(--font-work-sans)',
+                              fontSize: '0.8125rem',
+                              fontWeight: 500,
+                              color: '#fff',
+                              background: 'var(--green)',
+                              borderRadius: 9999,
+                              padding: '0.35rem 0.35rem 0.35rem 0.875rem',
+                              textDecoration: 'none',
+                              transition: `background 0.3s cubic-bezier(0.32,0.72,0,1)`,
+                            }}
+                          >
+                            Amazon
+                            <span style={{
+                              width: 22, height: 22,
+                              borderRadius: '50%',
+                              background: 'rgba(255,255,255,0.18)',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              flexShrink: 0,
+                              fontSize: '0.7rem',
+                            }}>↗</span>
+                          </a>
+                          <a
+                            href={livro.uiclapLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.3rem',
+                              fontFamily: 'var(--font-work-sans)',
+                              fontSize: '0.8125rem',
+                              fontWeight: 500,
+                              color: 'var(--terracotta)',
+                              background: 'var(--terracotta-soft)',
+                              border: '1px solid var(--terracotta-border)',
+                              borderRadius: 9999,
+                              padding: '0.35rem 0.35rem 0.35rem 0.875rem',
+                              textDecoration: 'none',
+                              transition: `background 0.3s cubic-bezier(0.32,0.72,0,1)`,
+                            }}
+                          >
+                            Uiclap
+                            <span style={{
+                              width: 22, height: 22,
+                              borderRadius: '50%',
+                              background: 'rgba(201,146,94,0.15)',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              flexShrink: 0,
+                              fontSize: '0.7rem',
+                            }}>↗</span>
+                          </a>
+                        </div>
+                      ) : livro.comingSoon ? (
+                        <span style={{
+                          marginTop: 'auto',
+                          paddingTop: '0.75rem',
+                          fontFamily: 'var(--font-work-sans)',
+                          fontSize: '0.8125rem',
+                          color: 'var(--terracotta)',
+                          fontWeight: 500,
+                        }}>Em publicação — em breve nas livrarias</span>
                       ) : (
                         <button
                           disabled
                           style={{
-                            marginTop: '0.75rem',
+                            marginTop: 'auto',
+                            paddingTop: '0.75rem',
                             fontFamily: 'var(--font-work-sans)',
                             fontSize: '0.875rem',
                             fontWeight: 500,
@@ -298,7 +335,7 @@ export default function LivrosPage() {
                             cursor: 'not-allowed',
                             opacity: 0.6,
                           }}
-                        >Em breve</button>
+                        >Em desenvolvimento</button>
                       )}
                     </div>
                   </div>

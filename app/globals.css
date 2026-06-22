@@ -8,10 +8,10 @@
   --bg:               #FAF3EB;
   --bg-alt:           #F0E4D4;
   --bg-card:          #FFFFFF;
-  --terracotta:       #C08552;
-  --terracotta-hover: #A86F40;
-  --terracotta-soft:  rgba(192,133,82,0.10);
-  --terracotta-border: rgba(192,133,82,0.28);
+  --terracotta:       #C9925E;
+  --terracotta-hover: #B07A48;
+  --terracotta-soft:  rgba(201,146,94,0.10);
+  --terracotta-border: rgba(201,146,94,0.28);
   --green:            #1F3B2C;
   --green-hover:      #15291E;
   --green-soft:       rgba(31,59,44,0.08);
@@ -35,9 +35,9 @@
   --text-muted:       #A89380;
   --border:           #2E2618;
   --nav-bg:           rgba(20,17,13,0.92);
-  --terracotta:       #C08552;
-  --terracotta-hover: #A86F40;
-  --terracotta-soft:  rgba(192,133,82,0.10);
+  --terracotta:       #C9925E;
+  --terracotta-hover: #B07A48;
+  --terracotta-soft:  rgba(201,146,94,0.10);
   --green:            #1F3B2C;
   --green-hover:      #15291E;
   --green-soft:       rgba(31,59,44,0.08);

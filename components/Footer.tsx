@@ -27,10 +27,11 @@ export function Footer() {
           <span
             style={{
               fontFamily: 'var(--font-fraunces)',
-              fontWeight: 600,
+              fontWeight: 400,
               fontStyle: 'italic',
-              fontSize: '1.15rem',
+              fontSize: '1.35rem',
               color: 'rgba(255,255,255,0.85)',
+              letterSpacing: '-0.02em',
             }}
           >
             Permane&apos;Ser
@@ -38,12 +39,12 @@ export function Footer() {
           <p style={{ lineHeight: 1.7, maxWidth: 220 }}>
             Ser, ficar e pertencer.
           </p>
-          {/* Social icons placeholder */}
           <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem' }}>
-            {/* TODO: links das redes sociais da Arlete */}
             <a
-              href="#"
-              aria-label="Instagram"
+              href="https://www.instagram.com/arleteklauckautora"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram @arleteklauckautora"
               style={{
                 width: 32, height: 32, borderRadius: '50%',
                 border: '1px solid rgba(255,255,255,0.12)',
@@ -60,20 +61,22 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="#"
-              aria-label="LinkedIn"
+              href="https://linktr.ee/arletebeatrizklauck"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Linktree de Arlete Klauck"
               style={{
                 width: 32, height: 32, borderRadius: '50%',
                 border: '1px solid rgba(255,255,255,0.12)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 color: 'rgba(255,255,255,0.4)',
                 textDecoration: 'none',
+                transition: 'border-color 0.2s, color 0.2s',
               }}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
               </svg>
             </a>
           </div>
