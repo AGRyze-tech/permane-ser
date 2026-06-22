@@ -1,7 +1,16 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
+
+// TODO: substituir pelos caminhos reais quando as fotos chegarem
+// Salvar em public/clinica/foto-1.jpg, foto-2.jpg, foto-3.jpg
+const clinicaFotos: { src: string; alt: string }[] = [
+  // { src: '/clinica/foto-1.jpg', alt: 'Sala de atendimento — Clínica Divã' },
+  // { src: '/clinica/foto-2.jpg', alt: 'Recepção — Clínica Divã' },
+  // { src: '/clinica/foto-3.jpg', alt: 'Espaço de espera — Clínica Divã' },
+]
 
 const programas = [
   {
@@ -411,6 +420,90 @@ export default function AtendimentoPage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ CLÍNICA DIVÃ ════════════════════════════════ */}
+      <section style={{ background: 'var(--bg-alt)', ...sectionPad }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <FadeIn style={{ marginBottom: '3rem' }}>
+            <span style={eyebrow}><Dot /> Atendimento Presencial</span>
+            <h2 style={{
+              fontFamily: 'var(--font-fraunces)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
+              color: 'var(--text)',
+              lineHeight: 1.25,
+              maxWidth: 560,
+            }}>
+              Clínica Divã — um espaço pensado para você.
+            </h2>
+            <p style={{
+              fontFamily: 'var(--font-work-sans)',
+              fontSize: '1rem',
+              color: 'var(--text-muted)',
+              lineHeight: 1.85,
+              maxWidth: 560,
+              marginTop: '1rem',
+            }}>
+              Um ambiente acolhedor e reservado para os atendimentos presenciais de Arlete Klauck.
+            </p>
+          </FadeIn>
+
+          {clinicaFotos.length > 0 ? (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+              gap: 12,
+            }}>
+              {clinicaFotos.map((foto, i) => (
+                <FadeIn key={foto.src} delay={i * 0.08}>
+                  <div style={{
+                    background: 'rgba(31,59,44,0.05)',
+                    border: '1px solid var(--border)',
+                    borderRadius: '2rem',
+                    padding: 6,
+                    overflow: 'hidden',
+                  }}>
+                    <div style={{
+                      borderRadius: 'calc(2rem - 6px)',
+                      overflow: 'hidden',
+                      aspectRatio: '4/3',
+                      position: 'relative',
+                    }}>
+                      <Image
+                        src={foto.src}
+                        alt={foto.alt}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          ) : (
+            /* Placeholder enquanto as fotos não chegam */
+            <FadeIn>
+              <div style={{
+                background: 'rgba(31,59,44,0.04)',
+                border: '1px dashed var(--border)',
+                borderRadius: '2rem',
+                padding: '3rem 2rem',
+                textAlign: 'center',
+              }}>
+                <p style={{
+                  fontFamily: 'var(--font-work-sans)',
+                  fontSize: '0.9rem',
+                  color: 'var(--text-muted)',
+                }}>
+                  Fotos da clínica em breve.
+                </p>
+              </div>
+            </FadeIn>
+          )}
         </div>
       </section>
 
