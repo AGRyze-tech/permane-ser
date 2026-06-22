@@ -57,7 +57,7 @@ export function Nav() {
             fontWeight: 400,
             fontStyle: 'italic',
             fontSize: '1.35rem',
-            color: 'var(--green)',
+            color: 'var(--nav-logo-color)',
             textDecoration: 'none',
             padding: '0.3rem 0.875rem',
             borderRadius: 9999,

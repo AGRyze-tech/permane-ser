@@ -25,6 +25,7 @@
   --nav-pill-border:  rgba(227,211,190,0.85);
   --nav-pill-shadow:  0 8px 32px rgba(42,33,24,0.09), inset 0 1px 0 rgba(255,255,255,0.65);
   --menu-overlay-bg:  rgba(250,243,235,0.97);
+  --nav-logo-color:   var(--green);
 }
 
 [data-theme="dark"] {
@@ -47,6 +48,7 @@
   --nav-pill-border:  rgba(46,38,24,0.9);
   --nav-pill-shadow:  0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
   --menu-overlay-bg:  rgba(20,17,13,0.97);
+  --nav-logo-color:   rgba(255,255,255,0.88);
 }
 
 /* ── Easing ───────────────────────────────────────────── */
