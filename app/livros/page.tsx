@@ -25,8 +25,8 @@ const livros = [
     subtitle: 'Promovendo a reestruturação cognitiva — Editora Sinopsys',
     available: true,
     comingSoon: false,
-    amazonLink: 'https://www.amazon.com.br/s?k=Baralho+Pensamentos+Autom%C3%A1ticos+Arlete+Klauck', // TODO: link direto do produto
-    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
+    amazonLink: 'https://a.co/d/01gpDDnQ',
+    uiclapLink: 'https://loja.uiclap.com/titulo/ua165516',
   },
   {
     title: 'Baralho dos Esquemas Emocionais',
