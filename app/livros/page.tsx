@@ -5,22 +5,6 @@ import { E, eyebrow, Dot, sectionPad, FadeIn } from '../../lib/motion'
 
 const livros = [
   {
-    title: 'Baralho dos Esquemas Emocionais',
-    subtitle: 'Regulação Emocional na Prática Clínica — Editora Artesã',
-    available: false,
-    comingSoon: true,
-    amazonLink: '',
-    uiclapLink: '',
-  },
-  {
-    title: 'Baralho dos Pensamentos Automáticos Negativos',
-    subtitle: 'Promovendo a reestruturação cognitiva — Editora Sinopsys',
-    available: true,
-    comingSoon: false,
-    amazonLink: 'https://www.amazon.com.br/s?k=Baralho+Pensamentos+Autom%C3%A1ticos+Arlete+Klauck', // TODO: link direto do produto
-    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
-  },
-  {
     title: 'Sobre Existir',
     subtitle: 'Para se acolher, se cuidar e seguir',
     available: true,
@@ -35,6 +19,30 @@ const livros = [
     comingSoon: false,
     amazonLink: '',
     uiclapLink: '',
+  },
+  {
+    title: 'Baralho dos Pensamentos Automáticos Negativos',
+    subtitle: 'Promovendo a reestruturação cognitiva — Editora Sinopsys',
+    available: true,
+    comingSoon: false,
+    amazonLink: 'https://www.amazon.com.br/s?k=Baralho+Pensamentos+Autom%C3%A1ticos+Arlete+Klauck', // TODO: link direto do produto
+    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
+  },
+  {
+    title: 'Baralho dos Esquemas Emocionais',
+    subtitle: 'Regulação Emocional na Prática Clínica — Editora Artesã',
+    available: false,
+    comingSoon: true,
+    amazonLink: '',
+    uiclapLink: '',
+  },
+  {
+    title: 'Imagem Corporal',
+    subtitle: 'Identificando e reestruturando distorções',
+    available: true,
+    comingSoon: false,
+    amazonLink: 'https://www.amazon.com.br/s?k=Imagem+Corporal+Arlete+Klauck', // TODO: link direto do produto
+    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
   },
 ]
 
