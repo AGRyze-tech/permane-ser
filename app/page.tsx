@@ -604,6 +604,7 @@ function FrenteCard({
           boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.85)',
           position: 'relative',
           overflow: 'hidden',
+          transform: 'translateZ(0)',
           display: 'flex',
           flexDirection: 'column',
           gap: '0.875rem',
@@ -614,16 +615,17 @@ function FrenteCard({
           aria-hidden="true"
           style={{
             position: 'absolute',
-            top: '-2rem',
+            top: '0.5rem',
             right: '0.75rem',
             fontFamily: 'var(--font-fraunces)',
             fontWeight: 300,
-            fontSize: '8rem',
+            fontSize: 'clamp(4.5rem, 16vw, 8rem)',
             color: 'var(--bg-alt)',
             lineHeight: 1,
             userSelect: 'none',
             pointerEvents: 'none',
             zIndex: 0,
+            opacity: 0.9,
           }}
         >
           {num}
