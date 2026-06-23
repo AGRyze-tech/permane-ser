@@ -1,4 +1,5 @@
 ﻿'use client'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
@@ -171,19 +172,20 @@ export default function SobrePage() {
             <div
               className="photo-hero-inner"
               style={{
+                position: 'relative',
                 borderRadius: 'calc(2rem - 8px)',
                 overflow: 'hidden',
                 boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.7)',
                 background: 'var(--bg-alt)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
               }}>
-              {/* TODO: foto profissional de Arlete */}
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <Image
+                src="/arlete-1.jpg"
+                alt="Arlete Klauck — Psicóloga Clínica e Administradora"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                sizes="(max-width: 767px) 100vw, 420px"
+                priority
+              />
             </div>
           </div>
         </motion.div>

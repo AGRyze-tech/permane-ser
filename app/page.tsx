@@ -1,5 +1,6 @@
 ﻿'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { E, eyebrow, sectionPad, FadeIn } from '../lib/motion'
 
@@ -246,10 +247,14 @@ export default function HomePage() {
                 }}
                 className="photo-hero-inner"
               >
-                {/* TODO: foto profissional da Arlete */}
-                <span style={{ fontFamily: 'var(--font-work-sans)', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-                  [Foto Arlete]
-                </span>
+                <Image
+                  src="/arlete-2.jpg"
+                  alt="Arlete Klauck — Psicóloga Clínica"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  sizes="(max-width: 767px) 100vw, 420px"
+                  priority
+                />
               </div>
             </div>
           </FadeIn>

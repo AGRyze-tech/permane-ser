@@ -206,18 +206,18 @@ export default function AtendimentoPage() {
               borderRadius: 'calc(2rem - 8px)',
               overflow: 'hidden',
               background: 'var(--bg-alt)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
               boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.6)',
             }}
             className="photo-hero-inner"
             >
-              {/* TODO: foto profissional da Arlete — atendimento */}
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <Image
+                src="/arlete-2.jpg"
+                alt="Arlete Klauck — Psicóloga Clínica"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                sizes="(max-width: 767px) 100vw, 480px"
+                priority
+              />
             </div>
           </div>
         </motion.div>
