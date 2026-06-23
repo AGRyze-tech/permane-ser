@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
@@ -39,8 +39,8 @@ export default function SobrePage() {
         {/* Text column */}
         <div>
           <motion.span
-            initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: E }}
             style={{ display: 'inline-flex' }}
           >
@@ -48,8 +48,8 @@ export default function SobrePage() {
           </motion.span>
 
           <motion.h1
-            initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.12, ease: E }}
             style={{
               fontFamily: 'var(--font-fraunces)',
@@ -64,8 +64,8 @@ export default function SobrePage() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 18, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.28, ease: E }}
             style={{
               fontFamily: 'var(--font-work-sans)',
@@ -80,8 +80,8 @@ export default function SobrePage() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.44, ease: E }}
             style={{ display: 'flex', gap: '0.75rem', marginTop: '2.5rem', flexWrap: 'wrap' }}
           >
@@ -144,8 +144,8 @@ export default function SobrePage() {
 
         {/* Photo — double-bezel frame */}
         <motion.div
-          initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.18, ease: E }}
           style={{ position: 'relative', maxWidth: 420, margin: '0 auto', width: '100%' }}
         >

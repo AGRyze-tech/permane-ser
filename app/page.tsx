@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { E, eyebrow, sectionPad, FadeIn } from '../lib/motion'
@@ -69,8 +69,8 @@ export default function HomePage() {
       >
         {/* Eyebrow pill */}
         <motion.span
-          initial={{ opacity: 0, scale: 0.88, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, scale: 0.88 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: E }}
           style={eyebrow}
         >
@@ -93,8 +93,8 @@ export default function HomePage() {
           {heroLines.map((line, i) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.12 + i * 0.16, ease: E }}
               style={{ display: 'block' }}
             >
@@ -105,8 +105,8 @@ export default function HomePage() {
 
         {/* Sub */}
         <motion.p
-          initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85, ease: E }}
           style={{
             fontFamily: 'var(--font-work-sans)',
@@ -122,8 +122,8 @@ export default function HomePage() {
 
         {/* Direction cards — 2×2 double-bezel grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.05, ease: E }}
           className="dir-cards-grid"
           style={{

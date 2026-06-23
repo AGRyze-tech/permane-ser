@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
@@ -95,8 +95,8 @@ export default function FormacoesPage() {
         }}
       >
         <motion.span
-          initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: E }}
           style={{ display: 'inline-flex' }}
         >
@@ -104,8 +104,8 @@ export default function FormacoesPage() {
         </motion.span>
 
         <motion.h1
-          initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, delay: 0.12, ease: E }}
           style={{
             fontFamily: 'var(--font-fraunces)',
@@ -121,8 +121,8 @@ export default function FormacoesPage() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 18, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.28, ease: E }}
           style={{
             fontFamily: 'var(--font-work-sans)',
@@ -138,8 +138,8 @@ export default function FormacoesPage() {
 
         {/* Tab filters */}
         <motion.div
-          initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.44, ease: E }}
           style={{ display: 'flex', gap: '0.5rem', marginTop: '3rem', flexWrap: 'wrap', justifyContent: 'center' }}
         >
@@ -196,8 +196,8 @@ export default function FormacoesPage() {
               role="tabpanel"
               id={`tabpanel-${activeTab}`}
               aria-labelledby={`tab-${activeTab}`}
-              initial={reduced ? {} : { opacity: 0, y: 12, filter: 'blur(4px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              initial={reduced ? {} : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
               exit={reduced ? {} : { opacity: 0, y: -8 }}
               transition={{ duration: 0.28, ease: E }}
             >

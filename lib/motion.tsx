@@ -3,13 +3,9 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 export const E: [number, number, number, number] = [0.32, 0.72, 0, 1]
 
-const HIDDEN        = { opacity: 0, y: 28, filter: 'blur(4px)' }
-const HIDDEN_MOBILE = { opacity: 0, y: 20 }
-const VISIBLE        = { opacity: 1, y: 0, filter: 'blur(0px)' }
-const VISIBLE_MOBILE = { opacity: 1, y: 0 }
-const EMPTY = {}
-
-const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
+const HIDDEN  = { opacity: 0, y: 24 }
+const VISIBLE = { opacity: 1, y: 0 }
+const EMPTY   = {}
 
 export const eyebrow: React.CSSProperties = {
   display: 'inline-flex',
@@ -54,13 +50,11 @@ export function FadeIn({
   className?: string
 }) {
   const reduced = useReducedMotion()
-  const h = isMobile ? HIDDEN_MOBILE : HIDDEN
-  const v = isMobile ? VISIBLE_MOBILE : VISIBLE
   return (
     <motion.div
       className={className}
-      initial={reduced ? EMPTY : h}
-      whileInView={reduced ? EMPTY : v}
+      initial={reduced ? EMPTY : HIDDEN}
+      whileInView={reduced ? EMPTY : VISIBLE}
       viewport={{ once: true, margin: '-8%' }}
       transition={{ duration: 0.85, delay, ease: E }}
       style={style}

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -88,8 +88,8 @@ export default function AtendimentoPage() {
       >
         <div>
           <motion.span
-            initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: E }}
             style={{ display: 'inline-flex' }}
           >
@@ -97,8 +97,8 @@ export default function AtendimentoPage() {
           </motion.span>
 
           <motion.h1
-            initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.12, ease: E }}
             style={{
               fontFamily: 'var(--font-fraunces)',
@@ -115,8 +115,8 @@ export default function AtendimentoPage() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 18, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.28, ease: E }}
             style={{
               fontFamily: 'var(--font-work-sans)',
@@ -130,8 +130,8 @@ export default function AtendimentoPage() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.44, ease: E }}
             style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '2.5rem', alignItems: 'flex-start' }}
           >
@@ -182,8 +182,8 @@ export default function AtendimentoPage() {
 
         {/* Hero photo — double-bezel frame */}
         <motion.div
-          initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: E }}
         >
           <div style={{
