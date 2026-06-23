@@ -4,12 +4,16 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
-// TODO: substituir pelos caminhos reais quando as fotos chegarem
-// Salvar em public/clinica/foto-1.jpg, foto-2.jpg, foto-3.jpg
 const clinicaFotos: { src: string; alt: string }[] = [
-  // { src: '/clinica/foto-1.jpg', alt: 'Sala de atendimento — Clínica Divã' },
-  // { src: '/clinica/foto-2.jpg', alt: 'Recepção — Clínica Divã' },
-  // { src: '/clinica/foto-3.jpg', alt: 'Espaço de espera — Clínica Divã' },
+  { src: '/clinica/clinica-01.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-02.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-03.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-04.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-05.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-06.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-07.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-08.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-09.jpg', alt: 'Clínica Divã — espaço de atendimento' },
 ]
 
 const programas = [
