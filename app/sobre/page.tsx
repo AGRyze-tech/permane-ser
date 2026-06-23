@@ -3,11 +3,12 @@ import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
 const formacoes = [
-  { year: '2012', label: 'Graduação em Psicologia' },
-  { year: '—', label: 'Graduação em Administração de Empresas' },
-  { year: '—', label: 'Pós-graduação em Terapia Cognitivo-Comportamental (PUC-RS)' },
-  { year: '—', label: 'Formação em Psicoterapia Cognitivo-Comportamental da Infância e Adolescência' },
-  { year: '—', label: 'Formação em Psicoterapia Sexual' },
+  { year: '2002', label: 'Graduação em Administração de Empresas' },
+  { year: '2015', label: 'Graduação em Psicologia' },
+  { year: '2018', label: 'Especialização em Psicoterapia Cognitivo-Comportamental da Infância e Adolescência — Instituto Cognitivo RS' },
+  { year: '2020', label: 'Formação em Terapia Sexual — Inteligência Erótica' },
+  { year: '2022', label: 'Pós-graduação em Terapia Cognitivo-Comportamental — PUC-RS' },
+  { year: '2026', label: 'Especialização em Grupos Terapêuticos' },
 ]
 
 const frentes = [
@@ -219,7 +220,7 @@ export default function SobrePage() {
           {/* Timeline */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {formacoes.map((f, i) => (
-              <FadeIn key={f.year} delay={i * 0.07}>
+              <FadeIn key={i} delay={i * 0.07}>
                 {/* Double-bezel timeline card */}
                 <div style={{
                   background: 'rgba(192,133,82,0.04)',
