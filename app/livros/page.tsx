@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn } from '../../lib/motion'
 
@@ -7,14 +8,16 @@ const livros = [
   {
     title: 'Sobre Existir',
     subtitle: 'Para se acolher, se cuidar e seguir',
+    cover: '/livros/sobre-existir.jpg',
     available: true,
     comingSoon: false,
     amazonLink: 'https://www.amazon.com.br/s?k=Sobre+Existir+Arlete+Klauck', // TODO: link direto do produto
-    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
+    uiclapLink: 'https://loja.uiclap.com/titulo/ua412113', // TODO: confirmar link
   },
   {
     title: 'Ser & Amar',
     subtitle: 'O desafio de permanecer fiel a si mesmo sem abrir mão dos vínculos',
+    cover: '',
     available: false,
     comingSoon: false,
     amazonLink: '',
@@ -23,6 +26,7 @@ const livros = [
   {
     title: 'Baralho dos Pensamentos Automáticos Negativos',
     subtitle: 'Promovendo a reestruturação cognitiva — Editora Sinopsys',
+    cover: '/livros/baralho-pensamentos.jpg',
     available: true,
     comingSoon: false,
     amazonLink: 'https://a.co/d/01gpDDnQ',
@@ -31,6 +35,7 @@ const livros = [
   {
     title: 'Baralho dos Esquemas Emocionais',
     subtitle: 'Regulação Emocional na Prática Clínica — Editora Artesã',
+    cover: '',
     available: false,
     comingSoon: true,
     amazonLink: '',
@@ -39,6 +44,7 @@ const livros = [
   {
     title: 'Imagem Corporal',
     subtitle: 'Identificando e reestruturando distorções',
+    cover: '/livros/imagem-corporal.jpg',
     available: true,
     comingSoon: false,
     amazonLink: 'https://www.amazon.com.br/s?k=Imagem+Corporal+Arlete+Klauck', // TODO: link direto do produto
@@ -203,12 +209,22 @@ export default function LivrosPage() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       position: 'relative',
+                      overflow: 'hidden',
                     }}>
-                      {/* TODO: capa do livro */}
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                      </svg>
+                      {livro.cover ? (
+                        <Image
+                          src={livro.cover}
+                          alt={`Capa — ${livro.title}`}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          sizes="(max-width: 640px) 100vw, 280px"
+                        />
+                      ) : (
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                        </svg>
+                      )}
                       {!livro.available && (
                         <span style={{
                           position: 'absolute',

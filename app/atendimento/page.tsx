@@ -5,14 +5,9 @@ import { motion } from 'framer-motion'
 import { E, eyebrow, Dot, sectionPad, FadeIn, waLink } from '../../lib/motion'
 
 const clinicaFotos: { src: string; alt: string }[] = [
-  { src: '/clinica/clinica-01.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-02.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-03.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-04.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-05.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-06.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-07.jpg', alt: 'Clínica Divã — espaço de atendimento' },
-  { src: '/clinica/clinica-08.jpg', alt: 'Clínica Divã — espaço de atendimento' },
+  { src: '/clinica/clinica-05.jpg', alt: 'Clínica Divã — recepção' },
+  { src: '/clinica/clinica-06.jpg', alt: 'Clínica Divã — sala de atendimento' },
+  { src: '/clinica/clinica-08.jpg', alt: 'Clínica Divã — sala terapêutica' },
   { src: '/clinica/clinica-09.jpg', alt: 'Clínica Divã — espaço de atendimento' },
 ]
 
