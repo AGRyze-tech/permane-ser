@@ -12,7 +12,8 @@ const livros = [
     available: true,
     comingSoon: false,
     amazonLink: 'https://www.amazon.com.br/s?k=Sobre+Existir+Arlete+Klauck', // TODO: link direto do produto
-    uiclapLink: 'https://loja.uiclap.com/titulo/ua412113', // TODO: confirmar link
+    secondLabel: 'Uiclap',
+    secondLink: 'https://loja.uiclap.com/titulo/ua412113', // TODO: confirmar link
   },
   {
     title: 'Ser & Amar',
@@ -21,7 +22,8 @@ const livros = [
     available: false,
     comingSoon: false,
     amazonLink: '',
-    uiclapLink: '',
+    secondLabel: '',
+    secondLink: '',
   },
   {
     title: 'Baralho dos Pensamentos Automáticos Negativos',
@@ -30,7 +32,8 @@ const livros = [
     available: true,
     comingSoon: false,
     amazonLink: 'https://a.co/d/01gpDDnQ',
-    uiclapLink: 'https://loja.uiclap.com/titulo/ua165516',
+    secondLabel: 'Sinopsys',
+    secondLink: 'https://sinopsyseditora.com.br', // TODO: link direto do produto na Sinopsys
   },
   {
     title: 'Baralho dos Esquemas Emocionais',
@@ -39,7 +42,8 @@ const livros = [
     available: false,
     comingSoon: true,
     amazonLink: '',
-    uiclapLink: '',
+    secondLabel: '',
+    secondLink: '',
   },
   {
     title: 'Imagem Corporal',
@@ -48,7 +52,8 @@ const livros = [
     available: true,
     comingSoon: false,
     amazonLink: 'https://www.amazon.com.br/s?k=Imagem+Corporal+Arlete+Klauck', // TODO: link direto do produto
-    uiclapLink: 'https://uiclap.com', // TODO: link direto do produto
+    secondLabel: 'Rick Jogos',
+    secondLink: 'https://rickjogos.com.br', // TODO: link direto do produto na Rick Jogos
   },
 ]
 
@@ -267,7 +272,6 @@ export default function LivrosPage() {
                       )}
 
                       {livro.available ? (
-                        /* Dois botões externos: Amazon e Uiclap */
                         <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', paddingTop: '0.75rem', flexWrap: 'wrap' }}>
                           <a
                             href={livro.amazonLink}
@@ -300,38 +304,40 @@ export default function LivrosPage() {
                               fontSize: '0.7rem',
                             }}>↗</span>
                           </a>
-                          <a
-                            href={livro.uiclapLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '0.3rem',
-                              fontFamily: 'var(--font-work-sans)',
-                              fontSize: '0.8125rem',
-                              fontWeight: 500,
-                              color: 'var(--terracotta)',
-                              background: 'var(--terracotta-soft)',
-                              border: '1px solid var(--terracotta-border)',
-                              borderRadius: 9999,
-                              padding: '0.35rem 0.35rem 0.35rem 0.875rem',
-                              textDecoration: 'none',
-                              transition: `background 0.3s cubic-bezier(0.32,0.72,0,1)`,
-                            }}
-                          >
-                            Uiclap
-                            <span style={{
-                              width: 22, height: 22,
-                              borderRadius: '50%',
-                              background: 'rgba(201,146,94,0.15)',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              flexShrink: 0,
-                              fontSize: '0.7rem',
-                            }}>↗</span>
-                          </a>
+                          {livro.secondLink && (
+                            <a
+                              href={livro.secondLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.3rem',
+                                fontFamily: 'var(--font-work-sans)',
+                                fontSize: '0.8125rem',
+                                fontWeight: 500,
+                                color: 'var(--terracotta)',
+                                background: 'var(--terracotta-soft)',
+                                border: '1px solid var(--terracotta-border)',
+                                borderRadius: 9999,
+                                padding: '0.35rem 0.35rem 0.35rem 0.875rem',
+                                textDecoration: 'none',
+                                transition: `background 0.3s cubic-bezier(0.32,0.72,0,1)`,
+                              }}
+                            >
+                              {livro.secondLabel}
+                              <span style={{
+                                width: 22, height: 22,
+                                borderRadius: '50%',
+                                background: 'rgba(201,146,94,0.15)',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0,
+                                fontSize: '0.7rem',
+                              }}>↗</span>
+                            </a>
+                          )}
                         </div>
                       ) : livro.comingSoon ? (
                         <span style={{
