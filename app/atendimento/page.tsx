@@ -16,21 +16,18 @@ const programas = [
     num: '01',
     title: 'Um Encontro Consigo',
     desc: 'Para quem busca reconectar-se com sua própria identidade e necessidades, num espaço de escuta e autoconhecimento.',
-    free: true,
     msg: 'Olá Arlete, gostaria de saber mais sobre o programa em grupo "Um Encontro Consigo".',
   },
   {
     num: '02',
     title: 'Sua Vida com Mais Propósito',
     desc: 'Para quem sente que o cotidiano perdeu sentido e busca reconstruir direção e motivação para viver.',
-    free: false,
     msg: 'Olá Arlete, gostaria de saber mais sobre o programa em grupo "Sua Vida com Mais Propósito".',
   },
   {
     num: '03',
     title: 'Sendo Mulher e Mãe',
     desc: 'Para mulheres que vivem a maternidade buscando não se perder de si mesmas no processo.',
-    free: false,
     msg: 'Olá Arlete, gostaria de saber mais sobre o programa em grupo "Sendo Mulher e Mãe".',
   },
 ]
@@ -292,22 +289,20 @@ export default function AtendimentoPage() {
                       pointerEvents: 'none',
                       userSelect: 'none' as const,
                     }}>{p.num}</span>
-                    {p.free && (
-                      <span style={{
-                        alignSelf: 'flex-start',
-                        fontFamily: 'var(--font-work-sans)',
-                        fontSize: '0.7rem',
-                        fontWeight: 500,
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase' as const,
-                        color: 'var(--green)',
-                        background: 'rgba(31,59,44,0.1)',
-                        border: '1px solid rgba(31,59,44,0.2)',
-                        borderRadius: 9999,
-                        padding: '0.2rem 0.75rem',
-                        position: 'relative',
-                      }}>Gratuito</span>
-                    )}
+                    <span style={{
+                      alignSelf: 'flex-start',
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '0.7rem',
+                      fontWeight: 500,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase' as const,
+                      color: 'var(--terracotta)',
+                      background: 'rgba(201,146,94,0.1)',
+                      border: '1px solid rgba(201,146,94,0.25)',
+                      borderRadius: 9999,
+                      padding: '0.2rem 0.75rem',
+                      position: 'relative',
+                    }}>Sobre Existir</span>
                     <h3 style={{
                       fontFamily: 'var(--font-fraunces)',
                       fontWeight: 400,
