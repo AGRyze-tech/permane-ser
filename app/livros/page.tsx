@@ -400,6 +400,166 @@ export default function LivrosPage() {
         </div>
       </section>
 
+      {/* ═══ FERRAMENTAS DO PROCESSO ════════════════════ */}
+      <section style={{ background: 'var(--bg-alt)', ...sectionPad }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <FadeIn style={{ marginBottom: '3rem' }}>
+            <span style={eyebrow}><Dot /> Ferramentas do Processo Terapêutico</span>
+            <h2 style={{
+              fontFamily: 'var(--font-fraunces)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
+              color: 'var(--text)',
+              lineHeight: 1.25,
+              maxWidth: 560,
+            }}>
+              O que acontece entre as sessões.
+            </h2>
+            <p style={{
+              fontFamily: 'var(--font-work-sans)',
+              fontSize: '1rem',
+              color: 'var(--text-muted)',
+              lineHeight: 1.85,
+              maxWidth: 560,
+              marginTop: '1rem',
+            }}>
+              Parte do processo terapêutico acontece fora do consultório. Essas são as tarefas que peço para você preencher em casa — elas ajudam a trazer mais clareza para o que estamos trabalhando juntos em sessão.
+            </p>
+          </FadeIn>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
+            gap: 16,
+          }}>
+            {/* RPD Semanal */}
+            <FadeIn delay={0.05}>
+              <div style={{
+                background: 'rgba(192,133,82,0.05)',
+                border: '1px solid var(--border)',
+                borderRadius: '2rem',
+                padding: 6,
+                height: '100%',
+              }}>
+                <div style={{
+                  background: 'var(--bg-card)',
+                  borderRadius: 'calc(2rem - 6px)',
+                  boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.85)',
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}>
+                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: 'var(--bg-alt)' }}>
+                    <Image
+                      src="/tarefas/rpd-semanal.jpg"
+                      alt="RPD Semanal — Registro de Pensamentos Automáticos Negativos"
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'top' }}
+                      sizes="(max-width: 767px) 100vw, 560px"
+                    />
+                  </div>
+                  <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '0.625rem', flex: 1 }}>
+                    <span style={{
+                      alignSelf: 'flex-start',
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '0.7rem',
+                      fontWeight: 500,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase' as const,
+                      color: 'var(--green)',
+                      background: 'rgba(31,59,44,0.08)',
+                      border: '1px solid rgba(31,59,44,0.18)',
+                      borderRadius: 9999,
+                      padding: '0.2rem 0.75rem',
+                    }}>Tarefa de Casa</span>
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces)',
+                      fontWeight: 400,
+                      fontStyle: 'italic',
+                      fontSize: '1.15rem',
+                      color: 'var(--text)',
+                      lineHeight: 1.3,
+                    }}>RPD Semanal</h3>
+                    <p style={{
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '0.9rem',
+                      color: 'var(--text-muted)',
+                      lineHeight: 1.8,
+                    }}>
+                      Registro de Pensamentos Automáticos Negativos. Você preenche ao longo da semana — anotando situações, o que sentiu, o que pensou — pra gente trabalhar isso junto em sessão.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Afetivograma */}
+            <FadeIn delay={0.1}>
+              <div style={{
+                background: 'rgba(192,133,82,0.05)',
+                border: '1px solid var(--border)',
+                borderRadius: '2rem',
+                padding: 6,
+                height: '100%',
+              }}>
+                <div style={{
+                  background: 'var(--bg-card)',
+                  borderRadius: 'calc(2rem - 6px)',
+                  boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.85)',
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}>
+                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: 'var(--bg-alt)' }}>
+                    <Image
+                      src="/tarefas/afetivograma.jpg"
+                      alt="Afetivograma Mensal — rastreador de humor"
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'top' }}
+                      sizes="(max-width: 767px) 100vw, 560px"
+                    />
+                  </div>
+                  <div style={{ padding: '1.75rem', display: 'flex', flexDirection: 'column', gap: '0.625rem', flex: 1 }}>
+                    <span style={{
+                      alignSelf: 'flex-start',
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '0.7rem',
+                      fontWeight: 500,
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase' as const,
+                      color: 'var(--green)',
+                      background: 'rgba(31,59,44,0.08)',
+                      border: '1px solid rgba(31,59,44,0.18)',
+                      borderRadius: 9999,
+                      padding: '0.2rem 0.75rem',
+                    }}>Tarefa de Casa</span>
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces)',
+                      fontWeight: 400,
+                      fontStyle: 'italic',
+                      fontSize: '1.15rem',
+                      color: 'var(--text)',
+                      lineHeight: 1.3,
+                    }}>Afetivograma Mensal</h3>
+                    <p style={{
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '0.9rem',
+                      color: 'var(--text-muted)',
+                      lineHeight: 1.8,
+                    }}>
+                      Rastreador diário de humor ao longo do mês. Você marca como se sentiu cada dia — isso ajuda a identificar padrões que às vezes passam despercebidos no dia a dia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ ARTIGOS CIENTÍFICOS ════════════════════════ */}
       <section style={{ background: 'var(--bg)', ...sectionPad }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
