@@ -64,7 +64,7 @@ export function FadeIn({
   )
 }
 
-export const WA_BASE = 'https://wa.me/55' // TODO: número de WhatsApp da Arlete
+export const WA_BASE = 'https://wa.me/5577810388794'
 export function waLink(msg: string) {
   return `${WA_BASE}?text=${encodeURIComponent(msg)}`
 }
