@@ -68,19 +68,34 @@ const artigos = [
 
 const materiais = [
   {
+    title: 'RPD Semanal',
+    type: 'TAREFA',
+    desc: 'Registro de Pensamentos Automáticos Negativos — preencha ao longo da semana registrando situações, emoções e pensamentos para trabalhar em sessão.',
+    src: '/tarefas/rpd-semanal.jpg',
+  },
+  {
+    title: 'Afetivograma Mensal',
+    type: 'TAREFA',
+    desc: 'Rastreador diário de humor e estados emocionais ao longo do mês — identifica padrões afetivos e auxilia o acompanhamento terapêutico.',
+    src: '/tarefas/afetivograma.jpg',
+  },
+  {
     title: 'Inventário de Autoconhecimento',
     type: 'PDF',
     desc: 'Reflexões guiadas para compreender seus padrões, valores e necessidades.',
+    src: '',
   },
   {
     title: 'Escala de Bem-Estar Emocional',
     type: 'PDF',
     desc: 'Um instrumento de autoanálise para mapear seu estado emocional atual.',
+    src: '',
   },
   {
     title: 'Exercício: Identificando Vínculos que Sustentam',
     type: 'PDF',
     desc: 'Uma prática reflexiva para reconhecer as relações que nutrem sua identidade.',
+    src: '',
   },
 ]
 
@@ -733,44 +748,73 @@ export default function LivrosPage() {
                         background: 'var(--bg-card)',
                         borderRadius: 'calc(1.5rem - 5px)',
                         boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.85)',
-                        padding: '1.25rem 1.5rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '1.25rem',
+                        overflow: 'hidden',
                       }}>
-                        <span style={{
-                          fontFamily: 'var(--font-work-sans)',
-                          fontSize: '0.75rem',
-                          fontWeight: 500,
-                          color: 'var(--terracotta)',
-                          background: 'var(--terracotta-soft)',
-                          border: '1px solid rgba(192,133,82,0.3)',
-                          borderRadius: 4,
-                          padding: '0.2rem 0.6rem',
-                          flexShrink: 0,
-                        }}>{m.type}</span>
-                        <div style={{ flex: 1 }}>
-                          <p style={{ fontFamily: 'var(--font-fraunces)', fontSize: '0.9375rem', fontWeight: 400, color: 'var(--text)' }}>
-                            {m.title}
-                          </p>
-                          <p style={{ fontFamily: 'var(--font-work-sans)', fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.6 }}>
-                            {m.desc}
-                          </p>
+                        {/* Thumbnail preview for tarefas */}
+                        {m.src && (
+                          <div style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: 110,
+                            background: 'var(--bg-alt)',
+                            overflow: 'hidden',
+                          }}>
+                            <Image
+                              src={m.src}
+                              alt={m.title}
+                              fill
+                              style={{ objectFit: 'cover', objectPosition: 'top left' }}
+                              sizes="680px"
+                            />
+                            {/* gradient overlay so text below connects cleanly */}
+                            <div style={{
+                              position: 'absolute',
+                              inset: 0,
+                              background: 'linear-gradient(to bottom, transparent 40%, var(--bg-card) 100%)',
+                            }} />
+                          </div>
+                        )}
+                        {/* Content row */}
+                        <div style={{
+                          padding: '1rem 1.5rem 1.25rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '1.25rem',
+                        }}>
+                          <span style={{
+                            fontFamily: 'var(--font-work-sans)',
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                            color: m.type === 'TAREFA' ? 'var(--green)' : 'var(--terracotta)',
+                            background: m.type === 'TAREFA' ? 'rgba(31,59,44,0.08)' : 'var(--terracotta-soft)',
+                            border: `1px solid ${m.type === 'TAREFA' ? 'rgba(31,59,44,0.18)' : 'rgba(192,133,82,0.3)'}`,
+                            borderRadius: 4,
+                            padding: '0.2rem 0.6rem',
+                            flexShrink: 0,
+                          }}>{m.type === 'TAREFA' ? 'Tarefa de Casa' : m.type}</span>
+                          <div style={{ flex: 1 }}>
+                            <p style={{ fontFamily: 'var(--font-fraunces)', fontSize: '0.9375rem', fontWeight: 400, color: 'var(--text)' }}>
+                              {m.title}
+                            </p>
+                            <p style={{ fontFamily: 'var(--font-work-sans)', fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: 1.6 }}>
+                              {m.desc}
+                            </p>
+                          </div>
+                          {/* TODO: link real do arquivo */}
+                          <button disabled style={{
+                            fontFamily: 'var(--font-work-sans)',
+                            fontSize: '0.8125rem',
+                            fontWeight: 500,
+                            color: 'var(--text-muted)',
+                            background: 'var(--bg-alt)',
+                            border: '1px solid var(--border)',
+                            borderRadius: 9999,
+                            padding: '0.4rem 1rem',
+                            cursor: 'not-allowed',
+                            flexShrink: 0,
+                            opacity: 0.6,
+                          }}>Em breve</button>
                         </div>
-                        {/* TODO: link real do arquivo */}
-                        <button disabled style={{
-                          fontFamily: 'var(--font-work-sans)',
-                          fontSize: '0.8125rem',
-                          fontWeight: 500,
-                          color: 'var(--text-muted)',
-                          background: 'var(--bg-alt)',
-                          border: '1px solid var(--border)',
-                          borderRadius: 9999,
-                          padding: '0.4rem 1rem',
-                          cursor: 'not-allowed',
-                          flexShrink: 0,
-                          opacity: 0.6,
-                        }}>Em breve</button>
                       </div>
                     </div>
                   ))}
