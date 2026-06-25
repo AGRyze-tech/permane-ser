@@ -118,7 +118,7 @@ export default function HomePage() {
             lineHeight: 1.8,
           }}
         >
-          Ser, ficar e pertencer. Um espaço para permanecer sendo quem se é — sem abrir mão dos vínculos que dão sentido à vida.
+          Ser, ficar e pertencer. Um espaço para quem quer se reconhecer no meio de tudo que a vida cobra.
         </motion.p>
 
         {/* Direction cards — 2×2 double-bezel grid */}
@@ -176,7 +176,7 @@ export default function HomePage() {
                 position: 'relative',
               }}
             >
-              O conceito Permane&apos;Ser nasceu da busca por uma pergunta essencial — como permanecer sendo quem somos em uma época que nos convida constantemente a performar, competir, agradar, aparecer e nos adaptar?
+              O conceito Permane&apos;Ser nasceu de uma pergunta — como permanecer sendo quem somos numa época que nos convida o tempo todo a performar, competir, agradar e nos adaptar?
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -189,7 +189,7 @@ export default function HomePage() {
                 marginTop: '1.75rem',
               }}
             >
-              É um convite à reflexão sobre existência, vínculos, identidade, pertencimento e cuidado. Um lugar dedicado ao desenvolvimento humano sem que seja necessário abrir mão de quem somos ou dos vínculos que dão sentido à vida.
+              Um lugar para pensar sobre quem você é, o que você precisa e o que quer manter — sem ter que deixar partes suas pelo caminho.
             </p>
           </FadeIn>
         </div>
@@ -280,13 +280,13 @@ export default function HomePage() {
 
             <FadeIn delay={0.1}>
               <p style={{ fontFamily: 'var(--font-work-sans)', fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.85 }}>
-                Arlete Klauck é psicóloga clínica, administradora e escritora, com mais de 11 anos de experiência em atendimento psicológico. Especialista em Terapia Cognitivo-Comportamental (TCC), dedica-se ao estudo dos vínculos humanos, da identidade, do pertencimento e dos desafios da existência contemporânea.
+                Arlete Klauck é psicóloga clínica, administradora e escritora, com mais de 11 anos de atendimento. Especialista em TCC, trabalha com identidade, vínculos e os desafios reais de existir hoje.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
               <p style={{ fontFamily: 'var(--font-work-sans)', fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.85 }}>
-                É autora do livro <em>Sobre Existir</em> e idealizadora do Permane&apos;Ser. Sua atuação integra psicologia, filosofia, biologia e sociologia para compreender questões fundamentais da experiência humana.
+                É autora do livro <em>Sobre Existir</em> e criadora do Permane&apos;Ser.
               </p>
             </FadeIn>
 
@@ -367,7 +367,7 @@ export default function HomePage() {
                 margin: '0.625rem auto 0',
               }}
             >
-              Permane&apos;Ser para cada momento e cada propósito.
+              Onde você quer ir?
             </h2>
           </FadeIn>
 
@@ -403,7 +403,7 @@ export default function HomePage() {
               margin: '0 auto',
             }}
           >
-            Permanecer sendo quem se é começa com um passo.
+            Quando você estiver pronto, o espaço existe.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -415,7 +415,7 @@ export default function HomePage() {
               marginTop: '1.25rem',
             }}
           >
-            Escolha o caminho que faz sentido para você agora.
+            Por onde você quer começar?
           </p>
         </FadeIn>
         <FadeIn delay={0.2}>

@@ -77,7 +77,7 @@ export default function SobrePage() {
               maxWidth: 480,
             }}
           >
-            Psicóloga clínica com mais de 11 anos de experiência e formação em Administração de Empresas. Autora de livros e recursos terapêuticos, idealizadora do conceito Permane&apos;Ser — Reflexões sobre Existência, Vínculos e Pertencimento.
+            Psicóloga clínica com mais de 11 anos de atendimento, formada também em Administração. Autora de livros e baralhos terapêuticos, criadora do conceito Permane&apos;Ser.
           </motion.p>
 
           <motion.div
@@ -205,7 +205,7 @@ export default function SobrePage() {
               lineHeight: 1.25,
               marginBottom: '1.5rem',
             }}>
-              Uma construção contínua.
+              Formação
             </h2>
             <p style={{
               fontFamily: 'var(--font-work-sans)',
@@ -215,7 +215,7 @@ export default function SobrePage() {
               maxWidth: 640,
               marginBottom: '3.5rem',
             }}>
-              Ao longo de mais de uma década, tenho integrado diferentes perspectivas — da TCC à Terapia do Esquema, da avaliação psicológica ao TDAH — para oferecer um atendimento cada vez mais completo e humano.
+              Formei em Administração antes de entrar na Psicologia. Esse caminho não linear moldou como atendo — olhando a pessoa dentro de um contexto, não só o que ela apresenta em sessão.
             </p>
           </FadeIn>
 
@@ -288,7 +288,7 @@ export default function SobrePage() {
               lineHeight: 1.25,
               marginBottom: '1.5rem',
             }}>
-              Integração como princípio.
+              Como trabalho.
             </h2>
             <p style={{
               fontFamily: 'var(--font-work-sans)',
@@ -296,7 +296,7 @@ export default function SobrePage() {
               color: 'var(--text-muted)',
               lineHeight: 1.9,
             }}>
-              A Terapia Cognitivo-Comportamental forma a espinha dorsal do meu trabalho — com protocolos baseados em evidências e uma visão de que pensamentos, emoções e comportamentos se influenciam mutuamente.
+              A TCC é a base do meu trabalho — ela tem estrutura, tem evidência, e funciona. Mas não trato pessoas como se fossem protocolos.
             </p>
             <p style={{
               fontFamily: 'var(--font-work-sans)',
@@ -305,7 +305,7 @@ export default function SobrePage() {
               lineHeight: 1.9,
               marginTop: '1rem',
             }}>
-              A isso se somam elementos da Terapia do Esquema, da neurociência e de uma perspectiva filosófica sobre o existir — que acredita que o ser humano não se reduz a diagnósticos.
+              Junto com a Terapia do Esquema, busco entender quem a pessoa é de verdade — não só o que ela traz de sintoma.
             </p>
           </FadeIn>
 
@@ -349,7 +349,7 @@ export default function SobrePage() {
                     color: 'var(--text)',
                     lineHeight: 1.6,
                   }}>
-                    Existir com autenticidade não é um destino — é uma prática cotidiana de se conhecer e permanecer fiel a si mesmo.
+                    Existir com autenticidade não é um ponto de chegada. É uma prática — de se conhecer, de se ouvir, de se manter fiel mesmo quando é difícil.
                   </p>
                   <p style={{
                     fontFamily: 'var(--font-work-sans)',
@@ -380,7 +380,7 @@ export default function SobrePage() {
               fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
               color: 'var(--text)',
             }}>
-              Onde este trabalho acontece.
+              Como e onde trabalho.
             </h2>
           </FadeIn>
 
@@ -448,16 +448,8 @@ export default function SobrePage() {
             maxWidth: 580,
             margin: '0 auto',
           }}>
-            Pronto para começar?
+            Quando quiser conversar, estou aqui.
           </h2>
-          <p style={{
-            fontFamily: 'var(--font-work-sans)',
-            fontSize: '1rem',
-            color: 'rgba(255,255,255,0.6)',
-            marginTop: '1.25rem',
-          }}>
-            Escolha como prefere dar o primeiro passo.
-          </p>
         </FadeIn>
 
         <FadeIn delay={0.1}>

@@ -33,9 +33,9 @@ const programas = [
 ]
 
 const etapas = [
-  { num: '01', title: 'Primeira conversa', desc: 'Entendemos juntos sua demanda e história.' },
-  { num: '02', title: 'Construção do processo', desc: 'Definimos juntos o caminho terapêutico mais adequado.' },
-  { num: '03', title: 'Acompanhamento contínuo', desc: 'Sessões regulares com espaço de escuta e desenvolvimento.' },
+  { num: '01', title: 'Primeira conversa', desc: 'Você conta o que te trouxe até aqui. Sem pressa, sem julgamento.' },
+  { num: '02', title: 'Construção do processo', desc: 'A partir disso, construímos juntos como vai funcionar o processo.' },
+  { num: '03', title: 'Acompanhamento', desc: 'Sessões regulares onde você tem espaço pra ser você — sem precisar se explicar o tempo todo.' },
 ]
 
 const faqs = [
@@ -123,7 +123,7 @@ export default function AtendimentoPage() {
               maxWidth: 520,
             }}
           >
-            Psicoterapia individual com Arlete Klauck — TCC, presencial ou online, para quem busca se reconectar consigo mesmo sem abrir mão dos vínculos que importam.
+            Psicoterapia individual com Arlete Klauck — TCC, presencial ou online. Para quem chegou num ponto em que precisa de um espaço só seu.
           </motion.p>
 
           <motion.div
@@ -235,7 +235,7 @@ export default function AtendimentoPage() {
               maxWidth: 560,
               margin: '0 auto',
             }}>
-              Cada jornada tem um ponto de partida diferente.
+              Grupos com tema, começo e fim.
             </h2>
             <p style={{
               fontFamily: 'var(--font-work-sans)',
@@ -431,7 +431,7 @@ export default function AtendimentoPage() {
               lineHeight: 1.25,
               maxWidth: 560,
             }}>
-              Clínica Divã — um espaço pensado para você.
+              Clínica Divã — atendimento presencial em Porto Alegre.
             </h2>
             <p style={{
               fontFamily: 'var(--font-work-sans)',
@@ -441,7 +441,7 @@ export default function AtendimentoPage() {
               maxWidth: 560,
               marginTop: '1rem',
             }}>
-              Um ambiente acolhedor e reservado para os atendimentos presenciais de Arlete Klauck.
+              O espaço físico onde acontecem os atendimentos presenciais.
             </p>
           </FadeIn>
 
@@ -539,7 +539,7 @@ export default function AtendimentoPage() {
               lineHeight: 1.9,
               position: 'relative',
             }}>
-              Ciência aplicada ao cuidado emocional, com técnicas práticas para lidar com pensamentos, emoções e comportamentos que geram sofrimento. A TCC é uma das abordagens psicológicas com maior evidência científica no mundo — e na prática da Arlete, ela se traduz em acolhimento real, escuta genuína e ferramentas concretas para o seu dia a dia.
+              A TCC parte da ideia de que o que pensamos influencia o que sentimos — e o que sentimos influencia o que fazemos. Não é sobre consertar você. É sobre entender o que está acontecendo e ter recursos reais pra lidar com isso.
             </p>
           </FadeIn>
         </div>
@@ -658,7 +658,7 @@ export default function AtendimentoPage() {
             maxWidth: 620,
             margin: '0 auto',
           }}>
-            O primeiro passo para permanecer sendo quem você é.
+            Quando quiser dar esse passo, é só falar.
           </h2>
         </FadeIn>
         <FadeIn delay={0.15}>
