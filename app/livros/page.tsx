@@ -57,6 +57,15 @@ const livros = [
   },
 ]
 
+const artigos = [
+  {
+    title: 'Negligência emocional, desesperança e meritocracia: uma leitura psicossocial do sofrimento psíquico no Brasil contemporâneo',
+    resumo: 'Este artigo propõe uma leitura psicossocial do sofrimento psíquico no Brasil contemporâneo, articulando negligência emocional na infância, formação de crenças centrais e a influência do discurso meritocrático na internalização do fracasso.',
+    palavrasChave: ['sofrimento psíquico', 'meritocracia', 'desesperança', 'crenças centrais', 'negligência emocional'],
+    link: '', // TODO: link da publicação
+  },
+]
+
 const materiais = [
   {
     title: 'Inventário de Autoconhecimento',
@@ -368,6 +377,143 @@ export default function LivrosPage() {
                         >Em desenvolvimento</button>
                       )}
                     </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ ARTIGOS CIENTÍFICOS ════════════════════════ */}
+      <section style={{ background: 'var(--bg)', ...sectionPad }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <FadeIn style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={eyebrow}><Dot /> Produção Científica</span>
+            <h2 style={{
+              fontFamily: 'var(--font-fraunces)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              fontSize: 'clamp(1.7rem, 4vw, 2.4rem)',
+              color: 'var(--text)',
+              lineHeight: 1.25,
+              maxWidth: 580,
+              margin: '0 auto',
+            }}>
+              Artigos & Publicações Acadêmicas
+            </h2>
+          </FadeIn>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {artigos.map((artigo, i) => (
+              <FadeIn key={i} delay={0.05}>
+                {/* Double-bezel article card */}
+                <div style={{
+                  background: 'rgba(192,133,82,0.05)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '2rem',
+                  padding: 6,
+                }}>
+                  <div style={{
+                    background: 'var(--bg-card)',
+                    borderRadius: 'calc(2rem - 6px)',
+                    boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.85)',
+                    padding: 'clamp(1.5rem, 4vw, 2.25rem)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                  }}>
+                    {/* Top row: badge */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                      <span style={{
+                        fontFamily: 'var(--font-work-sans)',
+                        fontSize: '0.7rem',
+                        fontWeight: 500,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase' as const,
+                        color: 'var(--terracotta)',
+                        background: 'rgba(201,146,94,0.1)',
+                        border: '1px solid rgba(201,146,94,0.25)',
+                        borderRadius: 9999,
+                        padding: '0.2rem 0.75rem',
+                      }}>Artigo Científico</span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 style={{
+                      fontFamily: 'var(--font-fraunces)',
+                      fontWeight: 400,
+                      fontStyle: 'italic',
+                      fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
+                      color: 'var(--text)',
+                      lineHeight: 1.4,
+                    }}>{artigo.title}</h3>
+
+                    {/* Abstract */}
+                    <p style={{
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '0.9rem',
+                      color: 'var(--text-muted)',
+                      lineHeight: 1.8,
+                    }}>{artigo.resumo}</p>
+
+                    {/* Keywords */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: '0.4rem' }}>
+                      {artigo.palavrasChave.map(kw => (
+                        <span key={kw} style={{
+                          fontFamily: 'var(--font-work-sans)',
+                          fontSize: '0.72rem',
+                          fontWeight: 500,
+                          color: 'var(--text-muted)',
+                          background: 'var(--bg-alt)',
+                          border: '1px solid var(--border)',
+                          borderRadius: 9999,
+                          padding: '0.15rem 0.65rem',
+                        }}>{kw}</span>
+                      ))}
+                    </div>
+
+                    {/* CTA */}
+                    {artigo.link ? (
+                      <a
+                        href={artigo.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          alignSelf: 'flex-start',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.3rem',
+                          fontFamily: 'var(--font-work-sans)',
+                          fontSize: '0.875rem',
+                          fontWeight: 500,
+                          color: '#fff',
+                          background: 'var(--green)',
+                          borderRadius: 9999,
+                          padding: '0.4rem 0.4rem 0.4rem 1.1rem',
+                          textDecoration: 'none',
+                          transition: `background 0.3s cubic-bezier(0.32,0.72,0,1)`,
+                        }}
+                      >
+                        Ler artigo
+                        <span style={{
+                          width: 26, height: 26,
+                          borderRadius: '50%',
+                          background: 'rgba(255,255,255,0.18)',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '0.75rem',
+                        }}>↗</span>
+                      </a>
+                    ) : (
+                      <span style={{
+                        fontFamily: 'var(--font-work-sans)',
+                        fontSize: '0.8125rem',
+                        color: 'var(--terracotta)',
+                        fontWeight: 500,
+                      }}>Publicação em breve</span>
+                    )}
                   </div>
                 </div>
               </FadeIn>
